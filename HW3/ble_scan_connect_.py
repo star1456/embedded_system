@@ -43,7 +43,7 @@ try:
         if (descriptor.uuid == 0x2902):
             cccd = descriptor.handle
     dev.writeCharacteristic(cccd, bytes([1, 0]))
-    print(dev.readCharacteristic(cccd))
+    print(f"CCCD is set to {dev.readCharacteristic(cccd)}.")
 
     if dev.waitForNotifications(10):
         print(ch.read())
